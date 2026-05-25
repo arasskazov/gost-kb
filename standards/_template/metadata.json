@@ -1,0 +1,19 @@
+{
+  "gost_number": "{номер стандарта, например: Р 77.1.1-2025}",
+  "title": "{полное название стандарта}",
+  "status": "{действующий|заменен|отменен}",
+  "date_introduced": "{YYYY-MM-DD}",
+  "date_approved": "{YYYY-MM-DD}",
+  "publisher": "{организация-издатель}",
+  "category": "{категория стандарта серии 77}",
+  "replaces": ["{список заменяемых стандартов}"],
+  "replaced_by": ["{список заменяющих стандартов}"],
+  "references": ["{список нормативных ссылок}"],
+  "referenced_by": ["{список стандартов, ссылающихся на этот}"],
+  "keywords": ["{ключевые слова для поиска}"],
+  "summary_file": "summary.md",
+  "full_file": "full.md",
+  "source_docx": "{имя файла в source-docx/}",
+  "version": "1.0",
+  "last_updated": "{YYYY-MM-DD}"
+}
