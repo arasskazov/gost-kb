@@ -1,0 +1,47 @@
+# LLM Configuration File
+
+## Project Overview
+
+This repository contains GOST series 77 standards in a format optimized for Large Language Models.
+
+## Repository Structure
+
+- `standards/` - Contains all standards in Markdown format with metadata
+- `source-docx/` - Original DOCX files for reference
+- `scripts/` - Utility scripts for processing
+- `INDEX.md` - Complete index of all standards
+- `GLOSSARY.md` - Terminology glossary
+
+## How to Navigate
+
+1. Start with `INDEX.md` to find a specific standard by number or name
+2. Each standard has its own directory: `standards/{gost-number}/`
+3. Inside each standard directory:
+   - `metadata.json` - Structured metadata about the standard
+   - `summary.md` - Brief overview
+   - `full.md` - Complete standard text
+
+## File Formats
+
+### Markdown Files
+- Use clear heading hierarchy (H1, H2, H3)
+- Lists are preferred over dense paragraphs
+- Tables should be in standard Markdown format
+
+### JSON Metadata
+- UTF-8 encoded
+- Contains structured information about relationships between standards
+- Includes keywords for semantic search
+
+## Indexing Guidelines for LLMs
+
+When processing this repository:
+1. Parse `metadata.json` files first to understand the corpus structure
+2. Use `summary.md` for quick context
+3. Reference `full.md` for detailed information
+4. Cross-reference using the `references` and `referenced_by` fields in metadata
+
+## Version Information
+
+- Repository format version: 1.0
+- Last updated: See individual standard metadata
