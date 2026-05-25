@@ -1,6 +1,42 @@
-# Examples
-*.pyc
+```
+# Document files
+*.docx
+
+# Backup and temporary files
+*.tmp
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
+*.env.*
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencies
+node_modules/
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+.env/
+
+# Build artifacts
+dist/
+build/
+target/
 *.o
 *.obj
 *.exe
@@ -8,38 +44,14 @@ __pycache__/
 *.so
 *.a
 *.out
-# Dependencies
-node_modules/
-venv/
-.venv/
-.mypy_cache/
-.pytest_cache/
-.julia/
-zig*/
-target/
-.gradle/
-dist/
-build/
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-*.swo
+
+# Testing and coverage
+.coverage
 coverage/
 htmlcov/
-.coverage
-# Environment
-.env
-.env.local
-*.env.*
-# Editors
-.vscode/
-.idea/
-*.swp
-*.swo
-# System
-.DS_Store
-Thumbs.db
+.pytest_cache/
+.mypy_cache/
+
 # Compressed files
 *.zip
 *.gz
@@ -63,3 +75,4 @@ Thumbs.db
 *.tar.bz2
 *.tar.xz
 *.tar.zst
+```
