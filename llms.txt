@@ -2,46 +2,104 @@
 
 ## Project Overview
 
-This repository contains GOST series 77 standards in a format optimized for Large Language Models.
+This repository contains GOST R 77 series standards (Product Lifecycle Support System) in a format optimized for Large Language Models.
+
+**Russian:** Данный репозиторий содержит стандарты ГОСТ Р 77 серии «Система поддержки жизненного цикла изделия» в формате, оптимизированном для больших языковых моделей.
 
 ## Repository Structure
 
-- `standards/` - Contains all standards in Markdown format with metadata
-- `source-docx/` - Original DOCX files for reference
-- `scripts/` - Utility scripts for processing
-- `INDEX.md` - Complete index of all standards
-- `GLOSSARY.md` - Terminology glossary
+```
+├── INDEX.md              # Complete index of all standards
+├── GLOSSARY.md           # Terminology glossary aggregated from all standards
+├── llms.txt              # This file - LLM navigation guide
+├── standards/            # All processed standards
+│   ├── 77-001/           # Each standard in its own directory
+│   │   ├── full.md       # Canonical reference text (normalized Markdown)
+│   │   ├── summary.md    # Brief overview in Russian
+│   │   ├── metadata.json # Structured metadata
+│   │   └── media/        # Extracted images (if any)
+│   ├── 77-002/
+│   └── ... (13 standards total)
+├── source-docx/          # Original DOCX source files
+└── reports/              # Build and QA reports
+```
+
+## Key Files for LLMs
+
+### Primary Reference Files
+These are the canonical texts to use when answering questions about GOST R 77 standards:
+
+| File | Purpose |
+|------|---------|
+| `standards/77-XXX/full.md` | **Primary reference** - complete normalized text of each standard |
+| `INDEX.md` | Quick lookup table of all 13 standards with paths and descriptions |
+| `GLOSSARY.md` | Aggregated terminology from all standards (40+ terms) |
+
+### Supporting Files
+| File | Purpose |
+|------|---------|
+| `standards/77-XXX/summary.md` | Quick orientation (Russian) |
+| `standards/77-XXX/metadata.json` | Structured metadata for programmatic access |
+
+## Standards Coverage
+
+This repository contains **13 standards** from the GOST R 77 series:
+
+| Group | Standards | Topic |
+|-------|-----------|-------|
+| Base | 77.001, 77.002 | General provisions and terminology |
+| Requirements | 77.101, 77.102 | General requirements for lifecycle support |
+| Information Model | 77.301–77.306 | Product information model specifications |
+| Software Tools | 77.402–77.404 | Lifecycle software tools and interoperability |
 
 ## How to Navigate
 
-1. Start with `INDEX.md` to find a specific standard by number or name
-2. Each standard has its own directory: `standards/{gost-number}/`
-3. Inside each standard directory:
-   - `metadata.json` - Structured metadata about the standard
-   - `summary.md` - Brief overview
-   - `full.md` - Complete standard text
-
-## File Formats
-
-### Markdown Files
-- Use clear heading hierarchy (H1, H2, H3)
-- Lists are preferred over dense paragraphs
-- Tables should be in standard Markdown format
-
-### JSON Metadata
-- UTF-8 encoded
-- Contains structured information about relationships between standards
-- Includes keywords for semantic search
+1. **Find a standard**: Use `INDEX.md` to locate a specific standard by number or topic
+2. **Read the full text**: Open `standards/77-XXX/full.md` for the complete normative content
+3. **Look up terms**: Use `GLOSSARY.md` for definitions of technical terms
+4. **Quick overview**: Check `standards/77-XXX/summary.md` for a brief summary (Russian)
+5. **Programmatic access**: Parse `standards/77-XXX/metadata.json` for structured data
 
 ## Indexing Guidelines for LLMs
 
 When processing this repository:
-1. Parse `metadata.json` files first to understand the corpus structure
-2. Use `summary.md` for quick context
-3. Reference `full.md` for detailed information
-4. Cross-reference using the `references` and `referenced_by` fields in metadata
+
+1. **Parse metadata first**: Read all `metadata.json` files to understand corpus structure
+2. **Build term index**: Use `GLOSSARY.md` for terminology cross-referencing
+3. **Reference full.md**: Always prefer `full.md` over `summary.md` for authoritative answers
+4. **Preserve numbering**: Section numbers (e.g., 4.3, 5.2.1) are preserved in full.md
+5. **Note status**: Check `metadata.json` for standard status (project/draft/current)
+
+## Metadata Schema
+
+Each `metadata.json` contains:
+
+```json
+{
+  "id": "gost-r-77-001",
+  "standard_number": "ГОСТ Р 77.001",
+  "title": "Название стандарта",
+  "status": "project|draft|current",
+  "source_file": "source-docx/77.001.docx",
+  "language": "ru",
+  "keywords": ["ключевые", "слова"],
+  "glossary_terms": ["термин 1", "термин 2"],
+  "related_standards": ["ГОСТ Р 77.XXX"],
+  "processing_stage": "normalized-from-docx-v1"
+}
+```
+
+## Important Notes
+
+- **Language**: All standards are in Russian
+- **Source**: Derived from official DOCX files via pandoc conversion
+- **Normalization**: Text has been cleaned of Word artifacts while preserving normative content
+- **No paraphrasing**: Legal/normative text is preserved verbatim
+- **Images**: Extracted to `standards/77-XXX/media/` directories
 
 ## Version Information
 
 - Repository format version: 1.0
-- Last updated: See individual standard metadata
+- Processing stage: normalized-from-docx-v1
+- Total standards: 13
+- Last updated: 2025-05-26
