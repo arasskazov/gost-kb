@@ -1,0 +1,251 @@
+# AGENTS.md — Инструкции для AI-агентов
+
+Этот файл описывает структуру репозитория, правила работы с базой знаний стандартов ГОСТ Р 77.* и готовые сценарии использования для AI-агентов (DeepSeek, Claude, GPT, Qwen и других LLM).
+
+---
+
+## Что содержит этот репозиторий
+
+База знаний нормализованных текстов стандартов серии **ГОСТ Р 77.* «Система поддержки жизненного цикла изделия»** (ЖЦИ).
+
+Все документы — в статусе **«проект»**. Источник — DOCX-файлы, конвертированные в Markdown.  
+Официальные публикации: [tk482.ru](https://tk482.ru)
+
+---
+
+## Структура файлов
+
+```
+gost-kb/
+├── AGENTS.md              ← этот файл
+├── INDEX.md               ← таблица всех стандартов с путями
+├── GLOSSARY.md            ← агрегированный глоссарий терминов
+├── llms.txt               ← машиночитаемый манифест для LLM-краулеров
+├── .qwen/context.md       ← системный контекст для Qwen Coder
+├── standards/
+│   ├── 77-001/
+│   │   ├── full.md        ← КАНОНИЧЕСКИЙ текст (основной источник)
+│   │   ├── summary.md     ← краткое изложение (~1000 токенов)
+│   │   └── metadata.json  ← номер, статус, ключевые термины
+│   ├── 77-002/
+│   └── ...
+├── build_index.py         ← пересборка INDEX.md, GLOSSARY.md, llms.txt
+├── normalize_standard.py  ← конвертация DOCX → Markdown
+└── source-docx/           ← оригинальные DOCX-файлы
+```
+
+---
+
+## Правила работы с базой знаний
+
+### Приоритет источников
+
+1. `standards/77-XXX/full.md` — основной источник, цитировать по нему
+2. `standards/77-XXX/summary.md` — для быстрого ознакомления
+3. `GLOSSARY.md` — для поиска определений терминов
+4. `INDEX.md` — для навигации по всем стандартам
+
+### Правила цитирования
+
+- Всегда указывать номер стандарта и пункт: **ГОСТ Р 77.102, п. 4.3**
+- Цитировать дословно, без парафраза нормативных формулировок
+- При противоречии между стандартами — указать оба источника явно
+- Помнить: все документы в статусе «проект», не являются официальными
+
+### Что НЕ делать
+
+- Не домысливать требования, которых нет в текстах
+- Не смешивать формулировки разных стандартов без явного указания
+- Не утверждать, что проект ГОСТ = действующий стандарт
+
+---
+
+## Доступ к файлам через raw URL
+
+Любой файл доступен напрямую:
+
+```
+https://raw.githubusercontent.com/arasskazov/gost-kb/main/standards/77-102/full.md
+https://raw.githubusercontent.com/arasskazov/gost-kb/main/INDEX.md
+https://raw.githubusercontent.com/arasskazov/gost-kb/main/GLOSSARY.md
+https://raw.githubusercontent.com/arasskazov/gost-kb/main/llms.txt
+```
+
+Паттерн для любого стандарта:
+```
+https://raw.githubusercontent.com/arasskazov/gost-kb/main/standards/{номер-через-дефис}/full.md
+```
+Например: `77-402` → `standards/77-402/full.md`
+
+---
+
+## Сценарии использования
+
+### 1. Ответить на вопрос по конкретному стандарту
+
+```
+Прочитай: https://raw.githubusercontent.com/arasskazov/gost-kb/main/standards/77-102/full.md
+
+Вопрос: Какие стадии жизненного цикла изделия определены в этом стандарте?
+Ответь со ссылками на конкретные пункты.
+```
+
+### 2. Найти определение термина
+
+```
+Прочитай: https://raw.githubusercontent.com/arasskazov/gost-kb/main/GLOSSARY.md
+
+Найди определение термина «[термин]» и укажи, в каких стандартах он встречается.
+```
+
+### 3. Сравнить два стандарта
+
+```
+Прочитай оба документа:
+- https://raw.githubusercontent.com/arasskazov/gost-kb/main/standards/77-101/full.md
+- https://raw.githubusercontent.com/arasskazov/gost-kb/main/standards/77-102/full.md
+
+Сравни области применения. Укажи: что есть только в первом, только во втором, что противоречит.
+```
+
+### 4. Проверить документ на соответствие стандарту
+
+```
+Прочитай: https://raw.githubusercontent.com/arasskazov/gost-kb/main/standards/77-402/full.md
+
+Далее я предоставлю текст документа. Оцени его соответствие требованиям стандарта.
+Для каждого несоответствия укажи пункт стандарта и конкретную формулировку требования.
+```
+
+### 5. Обзор всей базы знаний
+
+```
+Прочитай: https://raw.githubusercontent.com/arasskazov/gost-kb/main/INDEX.md
+
+Какие стандарты есть в базе? Сгруппируй их по тематике.
+```
+
+---
+
+## Интеграция с DeepSeek
+
+DeepSeek не имеет встроенного доступа к GitHub, но поддерживает несколько рабочих схем:
+
+### Схема A: Прямая вставка через raw URL (рекомендуется)
+
+В интерфейсе DeepSeek Chat вставьте промпт с явным указанием URL:
+
+```
+Прочитай содержимое по ссылке и используй его как контекст:
+https://raw.githubusercontent.com/arasskazov/gost-kb/main/standards/77-102/full.md
+
+[Ваш вопрос]
+```
+
+> **Важно:** DeepSeek R1/V3 умеет читать URL при включённом поиске (кнопка «Search» в интерфейсе).
+> Без поиска — вставляйте текст вручную (см. схему B).
+
+### Схема B: Копипаст содержимого (универсальная)
+
+1. Откройте нужный `full.md` на GitHub
+2. Нажмите кнопку **Raw** — откроется чистый текст
+3. Скопируйте и вставьте в чат DeepSeek перед вопросом:
+
+```
+Контекст — текст стандарта ГОСТ Р 77.102:
+
+[вставленный текст]
+
+---
+
+Вопрос: [ваш вопрос]
+```
+
+### Схема C: DeepSeek API + Python (для автоматизации)
+
+```python
+import httpx
+from openai import OpenAI  # DeepSeek совместим с OpenAI SDK
+
+def ask_gost(standard_num: str, question: str) -> str:
+    # Загрузить текст стандарта
+    url = f"https://raw.githubusercontent.com/arasskazov/gost-kb/main/standards/{standard_num}/full.md"
+    standard_text = httpx.get(url).text
+
+    client = OpenAI(
+        api_key="your_deepseek_api_key",
+        base_url="https://api.deepseek.com"
+    )
+
+    response = client.chat.completions.create(
+        model="deepseek-chat",  # или deepseek-reasoner для R1
+        messages=[
+            {
+                "role": "system",
+                "content": (
+                    "Ты эксперт по стандартам ГОСТ Р 77.*. "
+                    "Отвечай строго на основе предоставленного текста. "
+                    "Цитируй конкретные пункты стандарта."
+                )
+            },
+            {
+                "role": "user",
+                "content": f"Текст стандарта {standard_num}:\n\n{standard_text}\n\n---\n\n{question}"
+            }
+        ],
+        max_tokens=4096
+    )
+    return response.choices[0].message.content
+
+
+# Пример использования
+answer = ask_gost("77-102", "Какие стадии ЖЦИ определены в стандарте?")
+print(answer)
+```
+
+### Схема D: Batch-загрузка нескольких стандартов
+
+Когда нужен контекст по нескольким стандартам одновременно:
+
+```python
+STANDARDS = ["77-101", "77-102", "77-201", "77-402"]
+BASE_URL = "https://raw.githubusercontent.com/arasskazov/gost-kb/main/standards"
+
+def load_standards(nums: list[str]) -> str:
+    parts = []
+    for num in nums:
+        text = httpx.get(f"{BASE_URL}/{num}/full.md").text
+        parts.append(f"## ГОСТ Р {num.replace('-', '.')}\n\n{text}")
+    return "\n\n---\n\n".join(parts)
+
+context = load_standards(STANDARDS)
+# Передать context в системный промпт или первое сообщение пользователя
+```
+
+> **Ограничение:** DeepSeek Chat поддерживает до 64K токенов контекста (deepseek-chat),
+> deepseek-reasoner — до 128K. Один `full.md` обычно занимает 5–15K токенов.
+
+---
+
+## Рекомендуемые модели для задач по ГОСТ
+
+| Задача | Рекомендуемая модель |
+|--------|---------------------|
+| Поиск определения, краткий ответ | DeepSeek V3 (deepseek-chat) |
+| Сложный анализ, проверка соответствия | DeepSeek R1 (deepseek-reasoner) |
+| Сравнение нескольких стандартов | DeepSeek R1 — лучше рассуждает |
+| Генерация документов по шаблону | DeepSeek V3 — быстрее и дешевле |
+
+---
+
+## Обновление базы знаний
+
+При добавлении нового стандарта:
+
+1. Добавить папку `standards/77-XXX/` с файлами `full.md`, `summary.md`, `metadata.json`
+2. Запустить `python build_index.py` — обновятся `INDEX.md`, `GLOSSARY.md`, `llms.txt`
+3. Вручную добавить строку в таблицу стандартов в `.qwen/context.md`
+
+---
+
+*Репозиторий: [github.com/arasskazov/gost-kb](https://github.com/arasskazov/gost-kb)*
