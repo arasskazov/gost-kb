@@ -1,105 +1,119 @@
-# LLM Configuration File
+# GOST R 77.* Knowledge Base
 
-## Project Overview
+Репозиторий содержит нормализованные Markdown-версии национальных стандартов Российской Федерации серии ГОСТ Р 77.*
+«Система поддержки жизненного цикла изделия».
 
-This repository contains GOST R 77 series standards (Product Lifecycle Support System) in a format optimized for Large Language Models.
+## Назначение
 
-**Russian:** Данный репозиторий содержит стандарты ГОСТ Р 77 серии «Система поддержки жизненного цикла изделия» в формате, оптимизированном для больших языковых моделей.
+Эта база знаний предназначена для использования LLM и другими автоматизированными системами для:
+- Поиска информации по стандартам системы поддержки ЖЦ изделия
+- Извлечения терминов и определений
+- Анализа взаимосвязей между стандартами
+- Поддержки инженерных и проектных задач
 
-## Repository Structure
+## Ключевые файлы
 
-```
-├── INDEX.md              # Complete index of all standards
-├── GLOSSARY.md           # Terminology glossary aggregated from all standards
-├── llms.txt              # This file - LLM navigation guide
-├── standards/            # All processed standards
-│   ├── 77-001/           # Each standard in its own directory
-│   │   ├── full.md       # Canonical reference text (normalized Markdown)
-│   │   ├── summary.md    # Brief overview in Russian
-│   │   ├── metadata.json # Structured metadata
-│   │   └── media/        # Extracted images (if any)
-│   ├── 77-002/
-│   └── ... (13 standards total)
-├── source-docx/          # Original DOCX source files
-└── reports/              # Build and QA reports
-```
+### Общие
+- `INDEX.md` — полный список обработанных стандартов
+- `GLOSSARY.md` — агрегированный глоссарий терминов
+- `reports/build-report.md` — отчёт о сборке и качестве обработки
 
-## Key Files for LLMs
+### Стандарты
 
-### Primary Reference Files
-These are the canonical texts to use when answering questions about GOST R 77 standards:
+Для каждого стандарта доступны:
+- `standards/77-XXX/full.md` — **канонический справочный текст** (используйте как основной источник)
+- `standards/77-XXX/summary.md` — краткое содержание для быстрого ознакомления
+- `standards/77-XXX/metadata.json` — машиночитаемые метаданные
 
-| File | Purpose |
-|------|---------|
-| `standards/77-XXX/full.md` | **Primary reference** - complete normalized text of each standard |
-| `INDEX.md` | Quick lookup table of all 13 standards with paths and descriptions |
-| `GLOSSARY.md` | Aggregated terminology from all standards (40+ terms) |
+#### Список стандартов
 
-### Supporting Files
-| File | Purpose |
-|------|---------|
-| `standards/77-XXX/summary.md` | Quick orientation (Russian) |
-| `standards/77-XXX/metadata.json` | Structured metadata for programmatic access |
+- **ГОСТ Р 55062-2021** Информационные технологии. Интероперабельность. Основные положения
+  - Полный текст: `interop/55062-2021/full.md`
+  - Кратко: `interop/55062-2021/summary.md`
+  - Метаданные: `interop/55062-2021/metadata.json`
 
-## Standards Coverage
+- **ГОСТ Р 77.001** Система поддержки жизненного цикла изделия. Основные положения
+  - Полный текст: `lci/77-001/full.md`
+  - Кратко: `lci/77-001/summary.md`
+  - Метаданные: `lci/77-001/metadata.json`
 
-This repository contains **13 standards** from the GOST R 77 series:
+- **ГОСТ Р 77.002** Система поддержки жизненного цикла изделия. Термины и определения
+  - Полный текст: `lci/77-002/full.md`
+  - Кратко: `lci/77-002/summary.md`
+  - Метаданные: `lci/77-002/metadata.json`
 
-| Group | Standards | Topic |
-|-------|-----------|-------|
-| Base | 77.001, 77.002 | General provisions and terminology |
-| Requirements | 77.101, 77.102 | General requirements for lifecycle support |
-| Information Model | 77.301–77.306 | Product information model specifications |
-| Software Tools | 77.402–77.404 | Lifecycle software tools and interoperability |
+- **ГОСТ Р 77.101** Система поддержки жизненного цикла изделия. Общие требования
+  - Полный текст: `lci/77-101/full.md`
+  - Кратко: `lci/77-101/summary.md`
+  - Метаданные: `lci/77-101/metadata.json`
 
-## How to Navigate
+- **ГОСТ Р 77.102** Система поддержки жизненного цикла изделия. Основные положения
+  - Полный текст: `lci/77-102/full.md`
+  - Кратко: `lci/77-102/summary.md`
+  - Метаданные: `lci/77-102/metadata.json`
 
-1. **Find a standard**: Use `INDEX.md` to locate a specific standard by number or topic
-2. **Read the full text**: Open `standards/77-XXX/full.md` for the complete normative content
-3. **Look up terms**: Use `GLOSSARY.md` for definitions of technical terms
-4. **Quick overview**: Check `standards/77-XXX/summary.md` for a brief summary (Russian)
-5. **Programmatic access**: Parse `standards/77-XXX/metadata.json` for structured data
+- **ГОСТ Р 77.301** Система поддержки жизненного цикла изделия. Информационная модель изделия
+  - Полный текст: `lci/77-301/full.md`
+  - Кратко: `lci/77-301/summary.md`
+  - Метаданные: `lci/77-301/metadata.json`
 
-## Indexing Guidelines for LLMs
+- **ГОСТ Р 77.302** Система поддержки жизненного цикла изделия. Информационная модель изделия
+  - Полный текст: `lci/77-302/full.md`
+  - Кратко: `lci/77-302/summary.md`
+  - Метаданные: `lci/77-302/metadata.json`
 
-When processing this repository:
+- **ГОСТ Р 77.303** Система поддержки жизненного цикла изделия. Информационная модель изделия
+  - Полный текст: `lci/77-303/full.md`
+  - Кратко: `lci/77-303/summary.md`
+  - Метаданные: `lci/77-303/metadata.json`
 
-1. **Parse metadata first**: Read all `metadata.json` files to understand corpus structure
-2. **Build term index**: Use `GLOSSARY.md` for terminology cross-referencing
-3. **Reference full.md**: Always prefer `full.md` over `summary.md` for authoritative answers
-4. **Preserve numbering**: Section numbers (e.g., 4.3, 5.2.1) are preserved in full.md
-5. **Note status**: Check `metadata.json` for standard status (project/draft/current)
+- **ГОСТ Р 77.304** Система поддержки жизненного цикла изделия. Информационная модель изделия
+  - Полный текст: `lci/77-304/full.md`
+  - Кратко: `lci/77-304/summary.md`
+  - Метаданные: `lci/77-304/metadata.json`
 
-## Metadata Schema
+- **ГОСТ Р 77.305** Система поддержки жизненного цикла изделия. Информационная модель изделия
+  - Полный текст: `lci/77-305/full.md`
+  - Кратко: `lci/77-305/summary.md`
+  - Метаданные: `lci/77-305/metadata.json`
 
-Each `metadata.json` contains:
+- **ГОСТ Р 77.306** Система поддержки жизненного цикла изделия. Информационная модель изделия
+  - Полный текст: `lci/77-306/full.md`
+  - Кратко: `lci/77-306/summary.md`
+  - Метаданные: `lci/77-306/metadata.json`
 
-```json
-{
-  "id": "gost-r-77-001",
-  "standard_number": "ГОСТ Р 77.001",
-  "title": "Название стандарта",
-  "status": "project|draft|current",
-  "source_file": "source-docx/77.001.docx",
-  "language": "ru",
-  "keywords": ["ключевые", "слова"],
-  "glossary_terms": ["термин 1", "термин 2"],
-  "related_standards": ["ГОСТ Р 77.XXX"],
-  "processing_stage": "normalized-from-docx-v1"
-}
-```
+- **ГОСТ Р 77.402** Система поддержки жизненного цикла изделия. Виды программных средств поддержки жизненного цикла
+  - Полный текст: `lci/77-402/full.md`
+  - Кратко: `lci/77-402/summary.md`
+  - Метаданные: `lci/77-402/metadata.json`
 
-## Important Notes
+- **ГОСТ Р 77.403** Система поддержки жизненного цикла изделия. Интероперабельность программных средств
+  - Полный текст: `lci/77-403/full.md`
+  - Кратко: `lci/77-403/summary.md`
+  - Метаданные: `lci/77-403/metadata.json`
 
-- **Language**: All standards are in Russian
-- **Source**: Derived from official DOCX files via pandoc conversion
-- **Normalization**: Text has been cleaned of Word artifacts while preserving normative content
-- **No paraphrasing**: Legal/normative text is preserved verbatim
-- **Images**: Extracted to `standards/77-XXX/media/` directories
+- **ГОСТ Р 77.404** Система поддержки жизненного цикла изделия. Интероперабельность программных средств
+  - Полный текст: `lci/77-404/full.md`
+  - Кратко: `lci/77-404/summary.md`
+  - Метаданные: `lci/77-404/metadata.json`
 
-## Version Information
 
-- Repository format version: 1.0
-- Processing stage: normalized-from-docx-v1
-- Total standards: 13
-- Last updated: 2025-05-26
+## Важные примечания
+
+1. **Канонический текст**: Файлы `full.md` являются нормализованными версиями оригинальных DOCX файлов.
+   Они сохраняют смысл и формулировки оригинала, но могут содержать незначительные артефакты конвертации.
+
+2. **Статус стандартов**: Все стандарты находятся в статусе «проект» или «черновик» и не являются официальными публикациями.
+
+3. **Язык**: Все документы на русском языке.
+
+4. **Изображения**: Графические материалы находятся в папках `standards/77-XXX/media/`.
+
+## Лицензирование
+
+Национальные стандарты РФ являются объектами авторского права.
+Использование должно соответствовать законодательству РФ об авторском праве и правилам Федерального агентства по техническому регулированию и метрологии.
+
+---
+
+*Repository generated automatically from GOST R 77.* DOCX source files.*

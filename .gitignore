@@ -1,18 +1,12 @@
 ```
-# Compiled and build artifacts
-*.pyc
-__pycache__/
-*.o
-*.obj
-build/
-dist/
+# Standards documentation build artifacts
+standards/interop/*/full.raw.md
+standards/interop/*/metadata.json
+
+# Logs and temp files
 *.log
 *.tmp
-
-# Dependencies
-.venv/
-venv/
-node_modules/
+*.swp
 
 # Environment files
 .env
@@ -23,20 +17,22 @@ node_modules/
 .vscode/
 .idea/
 
-# System files
-.DS_Store
-Thumbs.db
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
-# Coverage reports
+# Build directories
+dist/
+build/
+target/
+.coverage
 coverage/
 htmlcov/
-.coverage
 
-# Python specific
-*.py[cod]
-*$py.class
-*.so
-.Python
-*.egg-info/
-.eggs/
+# OS generated files
+.DS_Store
+Thumbs.db
 ```
