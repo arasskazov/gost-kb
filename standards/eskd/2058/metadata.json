@@ -1,0 +1,22 @@
+{
+  "standard_number": "ГОСТ Р 2.058-2023",
+  "title": "",
+  "status": "project",
+  "domain": "eskd",
+  "domain_group": "ЕСКД",
+  "date_introduced": "",
+  "date_approved": "",
+  "publisher": "Росстандарт",
+  "category": "",
+  "replaces": [],
+  "replaced_by": [],
+  "references": [],
+  "referenced_by": [],
+  "keywords": [],
+  "glossary_terms": [],
+  "summary_file": "summary.md",
+  "full_file": "full.md",
+  "source_docx": "gost_r_2.058-2023.docx",
+  "version": "1.0",
+  "last_updated": "2026-05-31"
+}
