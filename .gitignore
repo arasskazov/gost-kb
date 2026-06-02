@@ -1,7 +1,7 @@
 ```
 # Standards documentation build artifacts
-standards/interop/*/full.raw.md
-standards/interop/*/metadata.json
+standards/*/*/full.raw.md
+standards/*/*/metadata.json
 
 # Logs and temp files
 *.log
