@@ -21,16 +21,20 @@ gost-kb/
 ├── INDEX.md               ← таблица всех стандартов с путями
 ├── GLOSSARY.md            ← агрегированный глоссарий терминов
 ├── llms.txt               ← машиночитаемый манифест для LLM-краулеров
+├── README.md
 ├── .qwen/context.md       ← системный контекст для Qwen Coder
+├── utils/
+│   ├── build_index.py         ← пересборка INDEX.md, GLOSSARY.md, llms.txt
+│   └── normalize_standard.py  ← конвертация DOCX → Markdown
 ├── standards/
-│   ├── 77-001/
-│   │   ├── full.md        ← КАНОНИЧЕСКИЙ текст (основной источник)
-│   │   ├── summary.md     ← краткое изложение (~1000 токенов)
-│   │   └── metadata.json  ← номер, статус, ключевые термины
-│   ├── 77-002/
+│   ├── lci/
+│   │   └── 77-XXX/
+│   │       ├── full.md        ← КАНОНИЧЕСКИЙ текст (основной источник)
+│   │       ├── summary.md     ← краткое изложение (~1000 токенов)
+│   │       └── metadata.json  ← номер, статус, ключевые термины
+│   ├── eskd/
+│   ├── interop/
 │   └── ...
-├── build_index.py         ← пересборка INDEX.md, GLOSSARY.md, llms.txt
-├── normalize_standard.py  ← конвертация DOCX → Markdown
 └── source-docx/           ← оригинальные DOCX-файлы
 ```
 
@@ -243,7 +247,7 @@ context = load_standards(STANDARDS)
 При добавлении нового стандарта:
 
 1. Добавить папку `standards/77-XXX/` с файлами `full.md`, `summary.md`, `metadata.json`
-2. Запустить `python build_index.py` — обновятся `INDEX.md`, `GLOSSARY.md`, `llms.txt`
+2. Запустить `python utils/build_index.py` — обновятся `INDEX.md`, `GLOSSARY.md`, `llms.txt`
 3. Вручную добавить строку в таблицу стандартов в `.qwen/context.md`
 
 ---
