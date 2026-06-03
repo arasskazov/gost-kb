@@ -41,10 +41,12 @@ def load_metadata(standards_dir):
             metadata['domain'] = domain_dir.name
             
             # Add paths relative to standards/
+            # rel_path is used for local file access (e.g., GLOSSARY.md build)
             metadata['rel_path'] = f"{domain_dir.name}/{std_dir.name}"
-            metadata['full_md_path'] = f"{domain_dir.name}/{std_dir.name}/full.md"
-            metadata['summary_md_path'] = f"{domain_dir.name}/{std_dir.name}/summary.md"
-            metadata['metadata_json_path'] = f"{domain_dir.name}/{std_dir.name}/metadata.json"
+            # full_md_path, summary_md_path, metadata_json_path are used in INDEX.md and llms.txt
+            metadata['full_md_path'] = f"standards/{domain_dir.name}/{std_dir.name}/full.md"
+            metadata['summary_md_path'] = f"standards/{domain_dir.name}/{std_dir.name}/summary.md"
+            metadata['metadata_json_path'] = f"standards/{domain_dir.name}/{std_dir.name}/metadata.json"
             
             metadata_list.append(metadata)
 

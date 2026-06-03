@@ -28,84 +28,84 @@
 #### Список стандартов
 
 - **ГОСТ Р 2.058** Единая система конструкторской документации. Правила выполнения реквизитной части электронных конструкторских документов
-  - Полный текст: `eskd/2058/full.md`
-  - Кратко: `eskd/2058/summary.md`
-  - Метаданные: `eskd/2058/metadata.json`
+  - Полный текст: `standards/eskd/2058/full.md`
+  - Кратко: `standards/eskd/2058/summary.md`
+  - Метаданные: `standards/eskd/2058/metadata.json`
 
 - **ГОСТ Р 2.525** Единая система конструкторской документации. Электронная структура изделия конструктивная. Формат данных
-  - Полный текст: `eskd/2525/full.md`
-  - Кратко: `eskd/2525/summary.md`
-  - Метаданные: `eskd/2525/metadata.json`
+  - Полный текст: `standards/eskd/2525/full.md`
+  - Кратко: `standards/eskd/2525/summary.md`
+  - Метаданные: `standards/eskd/2525/metadata.json`
 
 - **ГОСТ Р 55062-2021** Информационные технологии. Интероперабельность. Основные положения
-  - Полный текст: `interop/55062-2021/full.md`
-  - Кратко: `interop/55062-2021/summary.md`
-  - Метаданные: `interop/55062-2021/metadata.json`
+  - Полный текст: `standards/interop/55062-2021/full.md`
+  - Кратко: `standards/interop/55062-2021/summary.md`
+  - Метаданные: `standards/interop/55062-2021/metadata.json`
 
 - **ГОСТ Р 77.001** Система поддержки жизненного цикла изделия. Основные положения
-  - Полный текст: `lci/77-001/full.md`
-  - Кратко: `lci/77-001/summary.md`
-  - Метаданные: `lci/77-001/metadata.json`
+  - Полный текст: `standards/lci/77-001/full.md`
+  - Кратко: `standards/lci/77-001/summary.md`
+  - Метаданные: `standards/lci/77-001/metadata.json`
 
 - **ГОСТ Р 77.002** Система поддержки жизненного цикла изделия. Термины и определения
-  - Полный текст: `lci/77-002/full.md`
-  - Кратко: `lci/77-002/summary.md`
-  - Метаданные: `lci/77-002/metadata.json`
+  - Полный текст: `standards/lci/77-002/full.md`
+  - Кратко: `standards/lci/77-002/summary.md`
+  - Метаданные: `standards/lci/77-002/metadata.json`
 
 - **ГОСТ Р 77.101** Система поддержки жизненного цикла изделия. Общие требования
-  - Полный текст: `lci/77-101/full.md`
-  - Кратко: `lci/77-101/summary.md`
-  - Метаданные: `lci/77-101/metadata.json`
+  - Полный текст: `standards/lci/77-101/full.md`
+  - Кратко: `standards/lci/77-101/summary.md`
+  - Метаданные: `standards/lci/77-101/metadata.json`
 
 - **ГОСТ Р 77.102** Система поддержки жизненного цикла изделия. Основные положения
-  - Полный текст: `lci/77-102/full.md`
-  - Кратко: `lci/77-102/summary.md`
-  - Метаданные: `lci/77-102/metadata.json`
+  - Полный текст: `standards/lci/77-102/full.md`
+  - Кратко: `standards/lci/77-102/summary.md`
+  - Метаданные: `standards/lci/77-102/metadata.json`
 
 - **ГОСТ Р 77.301** Система поддержки жизненного цикла изделия. Информационная модель изделия
-  - Полный текст: `lci/77-301/full.md`
-  - Кратко: `lci/77-301/summary.md`
-  - Метаданные: `lci/77-301/metadata.json`
+  - Полный текст: `standards/lci/77-301/full.md`
+  - Кратко: `standards/lci/77-301/summary.md`
+  - Метаданные: `standards/lci/77-301/metadata.json`
 
 - **ГОСТ Р 77.302** Система поддержки жизненного цикла изделия. Информационная модель изделия
-  - Полный текст: `lci/77-302/full.md`
-  - Кратко: `lci/77-302/summary.md`
-  - Метаданные: `lci/77-302/metadata.json`
+  - Полный текст: `standards/lci/77-302/full.md`
+  - Кратко: `standards/lci/77-302/summary.md`
+  - Метаданные: `standards/lci/77-302/metadata.json`
 
 - **ГОСТ Р 77.303** Система поддержки жизненного цикла изделия. Информационная модель изделия
-  - Полный текст: `lci/77-303/full.md`
-  - Кратко: `lci/77-303/summary.md`
-  - Метаданные: `lci/77-303/metadata.json`
+  - Полный текст: `standards/lci/77-303/full.md`
+  - Кратко: `standards/lci/77-303/summary.md`
+  - Метаданные: `standards/lci/77-303/metadata.json`
 
 - **ГОСТ Р 77.304** Система поддержки жизненного цикла изделия. Информационная модель изделия
-  - Полный текст: `lci/77-304/full.md`
-  - Кратко: `lci/77-304/summary.md`
-  - Метаданные: `lci/77-304/metadata.json`
+  - Полный текст: `standards/lci/77-304/full.md`
+  - Кратко: `standards/lci/77-304/summary.md`
+  - Метаданные: `standards/lci/77-304/metadata.json`
 
 - **ГОСТ Р 77.305** Система поддержки жизненного цикла изделия. Информационная модель изделия
-  - Полный текст: `lci/77-305/full.md`
-  - Кратко: `lci/77-305/summary.md`
-  - Метаданные: `lci/77-305/metadata.json`
+  - Полный текст: `standards/lci/77-305/full.md`
+  - Кратко: `standards/lci/77-305/summary.md`
+  - Метаданные: `standards/lci/77-305/metadata.json`
 
 - **ГОСТ Р 77.306** Система поддержки жизненного цикла изделия. Информационная модель изделия
-  - Полный текст: `lci/77-306/full.md`
-  - Кратко: `lci/77-306/summary.md`
-  - Метаданные: `lci/77-306/metadata.json`
+  - Полный текст: `standards/lci/77-306/full.md`
+  - Кратко: `standards/lci/77-306/summary.md`
+  - Метаданные: `standards/lci/77-306/metadata.json`
 
 - **ГОСТ Р 77.402** Система поддержки жизненного цикла изделия. Виды программных средств поддержки жизненного цикла
-  - Полный текст: `lci/77-402/full.md`
-  - Кратко: `lci/77-402/summary.md`
-  - Метаданные: `lci/77-402/metadata.json`
+  - Полный текст: `standards/lci/77-402/full.md`
+  - Кратко: `standards/lci/77-402/summary.md`
+  - Метаданные: `standards/lci/77-402/metadata.json`
 
 - **ГОСТ Р 77.403** Система поддержки жизненного цикла изделия. Интероперабельность программных средств
-  - Полный текст: `lci/77-403/full.md`
-  - Кратко: `lci/77-403/summary.md`
-  - Метаданные: `lci/77-403/metadata.json`
+  - Полный текст: `standards/lci/77-403/full.md`
+  - Кратко: `standards/lci/77-403/summary.md`
+  - Метаданные: `standards/lci/77-403/metadata.json`
 
 - **ГОСТ Р 77.404** Система поддержки жизненного цикла изделия. Интероперабельность программных средств
-  - Полный текст: `lci/77-404/full.md`
-  - Кратко: `lci/77-404/summary.md`
-  - Метаданные: `lci/77-404/metadata.json`
+  - Полный текст: `standards/lci/77-404/full.md`
+  - Кратко: `standards/lci/77-404/summary.md`
+  - Метаданные: `standards/lci/77-404/metadata.json`
 
 
 ## Важные примечания
