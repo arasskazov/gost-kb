@@ -1,22 +1,36 @@
 {
-  "standard_number": "ГОСТ Р 2.525-2024",
-  "title": "",
-  "status": "project",
+  "id": "gost-r-2-525",
+  "standard_number": "ГОСТ Р 2.525",
+  "title": "Единая система конструкторской документации. Электронная структура изделия конструктивная. Формат данных",
+  "status": "active",
+  "revision": "2024",
+  "source_url": null,
+  "source_file": "source-docx/2525.docx",
+  "language": "ru",
   "domain": "eskd",
-  "domain_group": "ЕСКД",
-  "date_introduced": "",
-  "date_approved": "",
-  "publisher": "Росстандарт",
-  "category": "",
-  "replaces": [],
-  "replaced_by": [],
-  "references": [],
-  "referenced_by": [],
-  "keywords": [],
-  "glossary_terms": [],
-  "summary_file": "summary.md",
-  "full_file": "full.md",
-  "source_docx": "gost_r_2.525-2024.docx",
-  "version": "1.0",
-  "last_updated": "2026-05-31"
+  "keywords": [
+    "ЕСКД",
+    "электронная структура изделия",
+    "ЭСК",
+    "конструктивная структура",
+    "формат данных",
+    "JSON",
+    "XML",
+    "составная часть"
+  ],
+  "glossary_terms": [
+    "контекст"
+  ],
+  "related_standards": [
+    "ГОСТ 2.113",
+    "ГОСТ 2.116",
+    "ГОСТ 23945.0",
+    "ГОСТ Р 2.005",
+    "ГОСТ Р 2.053",
+    "ГОСТ Р 2.101",
+    "ГОСТ Р 2.102",
+    "ГОСТ Р 2.201",
+    "ГОСТ Р 2.503"
+  ],
+  "processing_stage": "normalized-from-docx-v1"
 }
