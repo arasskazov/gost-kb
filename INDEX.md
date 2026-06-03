@@ -27,19 +27,20 @@
 ## Структура репозитория
 
 ```
-standards/
-└── standards/ # Стандарты в Markdown
-    ├── _template/ # Шаблоны для новых стандартов
-    │   ├── full.md        # Шаблон полной версии
-    │   ├── summary.md     # Шаблон краткого описания
-    │   ├── metadata.json  # Шаблон метаданных
-    │   └── media/            — изображения
-    ├── lci/ # Стандарты жизненного цикла (LCI)
-    │   └── 77-XXX/
-    ├── eskd/ # Стандарты ЕСКД
-    │   └── XXXX/
-    └── interop/ # Стандарты интероперабельности
-        └── XXXXX/├── 77-001/
+gost-kb/
+├── AGENTS.md
+├── INDEX.md
+├── GLOSSARY.md
+├── llms.txt
+├── README.md
+├── utils/
+│   ├── build_index.py        ← пересборка INDEX.md, GLOSSARY.md, llms.txt
+│   └── normalize_standard.py ← конвертация DOCX → Markdown
+├── standards/
+│   ├── lci/        ← стандарты жизненного цикла
+│   ├── eskd/       ← стандарты ЕСКД
+│   └── interop/    ← стандарты интероперабельности
+└── source-docx/    ← оригинальные DOCX-файлы
 ```
 
 ## Использование
