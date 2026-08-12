@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gost-registry-mcp"
+version = "0.1.0"
+description = "MCP-сервис верификации библиографических записей ГОСТ/ГОСТ Р/ПНСТ (СУР ЭКД / СУР ЭКТД)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+dependencies = [
+    "pydantic>=2.6",
+    "mcp>=1.2.0,<2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "mypy>=1.10",
+]
+
+[project.scripts]
+gost-registry-import = "gost_registry.importer:main"
+gost-registry-mcp = "gost_registry.mcp_server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
